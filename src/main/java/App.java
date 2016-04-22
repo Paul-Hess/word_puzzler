@@ -9,10 +9,23 @@ public class App {
     staticFileLocation("/public");
     String layout = "templates/layout.vtl";
 
-    get("/", (req, response) -> {
+    get("/", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("template", "templates/home.vtl");
       return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/puzzle", (request, response) -> {
+    	Map<String, Object> model = new HashMap<String, Object>();
+
+    	WordPuzzle newWordPuzzle = new WordPuzzle();
+    	String phrase = request.queryParams("phrase");
+    	String newPuzzle = newWordPuzzle.generatePuzzle(phrase);
+
+    	model.put("newPuzzle", newPuzzle);
+			model.put("template", "templates/puzzle.vtl");
+			
+    	return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
   }
