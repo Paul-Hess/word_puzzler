@@ -21,6 +21,15 @@ public class AppTest extends FluentTest {
   @Test
   public void rootTest() {
     goTo("http://localhost:4567/");
+    assertThat(pageSource().contains("Create and solve word puzzles"));
+  }
+
+  @Test 
+  public void puzzleSubmitTest() {
+    goTo("http://localhost:4567/");
+    fill("#phrase").with("this is a test phrase");
+    submit("#phrase-button");
+    assertThat(pageSource().contains("th-s -s - t-st phr-s-"));
   }
 
 } 
