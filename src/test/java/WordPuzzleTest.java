@@ -27,4 +27,13 @@ public class WordPuzzleTest {
 		assertEquals(expected, actual);
 	}
 
+	@Test
+	public void WordPuzzle_shouldAllowPuzzlesToBeSolved_boolean() {
+		WordPuzzle testWordPuzzle = new WordPuzzle();
+		String puzzle = "This is a test puzzle";
+		String answer = "This is a test puzzle";
+		boolean actual = testWordPuzzle.parseWin(puzzle, answer);
+		assertEquals(true, actual);
+	}
+
 }

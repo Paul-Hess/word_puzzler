@@ -8,4 +8,12 @@ public class WordPuzzle {
 
 		return puzzled;
 	}
+
+	public static boolean parseWin(String phrase, String answer) {
+		boolean win = false;
+		if(phrase.equals(answer)) {
+			win = true;
+		}
+		return win;
+	}
 }
