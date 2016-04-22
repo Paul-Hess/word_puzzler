@@ -32,4 +32,26 @@ public class AppTest extends FluentTest {
     assertThat(pageSource().contains("th-s -s - t-st phr-s-"));
   }
 
+  @Test
+  public void puzzleSolveTrueTest() {
+    goTo("http://localhost:4567/");
+    fill("#phrase").with("this is a test phrase");
+    submit("#phrase-button");
+    assertThat(pageSource().contains("th-s -s - t-st phr-s-"));
+    fill("#solving").with("this is a test phrase");
+    submit("#solve-button");
+    assertThat(pageSource().contains("is the correct answer, nice work."));
+  }
+
+  @Test 
+  public void puzzleSolveFalseTest() {
+    goTo("http://localhost:4567/");
+    fill("#phrase").with("this is a test phrase");
+    submit("#phrase-button");
+    assertThat(pageSource().contains("th-s -s - t-st phr-s-"));
+    fill("#solving").with("this is a test");
+    submit("#solve-button");
+    assertThat(pageSource().contains("is not correct, press the back button to try again."));
+  }
+
 } 
