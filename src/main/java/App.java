@@ -36,11 +36,17 @@ public class App {
     	String phrase = request.session().attribute("phrase");
 
     	boolean isSolved = newWordPuzzle.parseWin(phrase, solving);
-
+    	String trueSolved = "is the correct answer, nice work.";
+    	String falseSolved  = "is not correct, press the back button to try again.";
     
     	System.out.println(phrase);
     	model.put("solved", solving);
-    	model.put("isSolved", isSolved);
+
+    	if(isSolved) {
+    		model.put("trueSolved", trueSolved);
+    	} else if (!isSolved) {
+    		model.put("falseSolved", falseSolved);
+    	}
 
     	model.put("template", "templates/solve.vtl");
       return new ModelAndView(model, layout);

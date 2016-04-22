@@ -440,4 +440,70 @@ body {
   position: absolute;
   width: 1px; }
 
+.header-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch; }
+  .header-home h4, .header-home p {
+    border-radius: 4px;
+    border-bottom: .2px inset white;
+    text-align: center; }
+
+.headers {
+  width: 96vw;
+  margin: auto;
+  background: #ededed;
+  border-radius: 4px; }
+
+#phrase-form {
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  background: #999999;
+  border-radius: 4px;
+  margin: auto;
+  align-items: center; }
+  #phrase-form input, #phrase-form label {
+    width: 20vw; }
+
+.puzzled {
+  display: flex;
+  flex-direction: column;
+  background: #444444;
+  color: white;
+  border-radius: 4px;
+  width: 96vw;
+  margin: 0 auto 1em;
+  padding: 0;
+  text-align: center;
+  border-radius: 4px; }
+  .puzzled h4 {
+    border-bottom: 2px solid #999999; }
+
+#solve-form {
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  background: #999999;
+  border-radius: 4px;
+  margin: auto;
+  align-items: center; }
+  #solve-form input, #solve-form label {
+    width: 20vw; }
+
+.solving {
+  display: flex;
+  flex-direction: column;
+  background: #444444;
+  color: white;
+  border-radius: 4px;
+  width: 96vw;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  border-radius: 4px; }
+  .solving h3:nth-of-type(2) {
+    border-bottom: 2px solid white; }
+
 /*# sourceMappingURL=app.css.map */

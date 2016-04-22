@@ -1,0 +1,12 @@
+#phrase-form {
+	width: 30vw;
+	display: flex;
+	flex-direction: column;
+	background: $mid-grey;
+	border-radius: $radius;
+	margin: auto;
+	align-items: center;
+	input, label {
+		width: 20vw;
+	}
+}

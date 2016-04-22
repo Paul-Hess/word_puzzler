@@ -1,2 +1,9 @@
-<h3>Your solution: $solved is $isSolved</h3>
-
+<div class="solving"> 
+	<h3>Your solution:</h3>
+	<h3>$solved</h3>
+	#if($trueSolved)
+		<h4>$trueSolved</h4>
+	#else
+		<h4>$falseSolved</h4>
+	#end
+</div>
