@@ -11,7 +11,9 @@ public class WordPuzzle {
 
 	public static boolean parseWin(String phrase, String answer) {
 		boolean win = false;
-		if(phrase.equals(answer)) {
+		String loweredPhrase = phrase.toLowerCase();
+		String loweredAnswer = answer.toLowerCase();
+		if(loweredPhrase.equals(loweredAnswer)) {
 			win = true;
 		}
 		return win;
